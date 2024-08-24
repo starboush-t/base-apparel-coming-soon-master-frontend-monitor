@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <section class="logo slide-top">
+          <img src="images/logo.svg" alt="Logo Image" />
+        </section>
+        <section class="hero slide-top">
+          <!-- <img src="Images/hero-mobile.jpg" alt="Hero Image" /> -->
+        </section>
+        <section class="content slide-left">
+          <div class="title_container">
+            <h1 id="title"><span>We're</span> coming soon</h1>
+          </div>
+          <div class="desc">
+            <p>
+              Hello fellow shoppers! We're currently building our new fashion
+              store. Add your email below to stay up-to-date with announcements
+              and our launch deals.
+            </p>
+          </div>
+          <div class="contact">
+            <form action="/">
+              <div class="form_control">
+                <input type="text" placeholder="Email Address" />
+                <button id="btn">
+                  <img src="images/icon-arrow.svg" alt="" />
+                </button>
+                <div class="error_icon hidden">
+                  <img src="images/icon-error.svg" alt="Error Icon" />
+                </div>
+              </div>
+              <div class="error_msg hidden">
+                <span>Please provide a valid email</span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,378 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-greyish-red: hsl(0, 6%, 24%);
+  --soft-linear: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --btn-linear: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+}
+
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+main {
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.container {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.logo {
+  width: 90%;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+.logo img {
+  width: 6rem;
+}
+
+.hero {
+  width: 100%;
+  height: clamp(31.6rem, 36vw, 1rem);
+  background-image: url("/images/hero-mobile.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.hero img {
+  height: clamp(100%, 7vw, 15rem);
+  width: 100%;
+}
+
+.content {
+  display: grid;
+  /* flex-direction: column; */
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 2rem;
+}
+
+.title_container {
+  width: 100%;
+  height: 100%;
+}
+
+#title {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  font-size: clamp(2rem, 11vw, 5.1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  text-align: center;
+  line-height: clamp(2.5rem, 13vw, 5.5rem);
+}
+
+#title span {
+  font-weight: 200;
+  color: var(--desaturated-red);
+}
+
+.desc {
+  color: var(--desaturated-red);
+  text-align: center;
+  font-size: clamp(0.75rem, 3.8vw, 2rem);
+  line-height: clamp(0.7rem, 5vw, 2rem);
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+}
+
+input,
+button {
+  border: none;
+  border-radius: 7rem;
+  outline: none;
+}
+
+.contact {
+  width: 100%;
+  height: 100%;
+}
+
+.form_control {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: 0.09rem solid var(--desaturated-red);
+  border-radius: 7rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.form_control input {
+  height: 100%;
+  width: 100%;
+  padding: 0.89rem;
+}
+
+.form_control.error {
+  border: 0.1rem solid var(--soft-red);
+}
+
+.form_control input:focus {
+  outline: red;
+}
+
+button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -0.15rem;
+  width: 4rem;
+  height: 2.8rem;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 0.2rem 0.3rem 0.4rem rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error_icon {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* width: 100%; */
+  height: 100%;
+  /* top: 0.1rem; */
+  right: 4.6rem;
+  /* z-index: -1; */
+  transition: all 0.3s ease-in-out;
+}
+
+.error_msg {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  align-items: flex-start;
+  font-size: 0.72rem;
+  color: var(--soft-red);
+  transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 442px) {
+  .desc {
+    padding: 0 1.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    background-size: contain;
+  }
+  main {
+    display: flex;
+    height: 100%;
+    padding: 0 0;
+    background-image: url("/images/bg-pattern-desktop.svg");
+    background-position: center center;
+    background-size: 100%;
+  }
+  .container {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 0.1fr 1.7fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "logo hero"
+      "content hero";
+  }
+  .logo {
+    grid-area: logo;
+    padding: 3rem 6rem;
+    width: 100%;
+    height: 8rem;
+  }
+  .content {
+    grid-area: content;
+    width: 100%;
+    height: 100%;
+  }
+
+  #title {
+    font-weight: 500;
+    text-align: left;
+    font-size: 3.3rem;
+    line-height: 4rem;
+    padding: 0rem 4rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .desc {
+    color: var(--desaturated-red);
+    text-align: left;
+    font-size: clamp(0.53rem, 3.8vw, 0.62rem);
+    line-height: clamp(0.7rem, 5vw, 2rem);
+    font-weight: 400;
+    padding: 0 4rem;
+    width: 100%;
+  }
+
+  .hero {
+    grid-area: hero;
+    background-image: url("/images/hero-desktop.jpg");
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .contact {
+    padding: 0 4rem;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #title {
+    letter-spacing: 1rem;
+  }
+
+  .desc {
+    width: 82%;
+    font-size: 0.75rem;
+  }
+
+  .contact {
+    width: 82%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #title {
+    padding-right: 15rem;
+  }
+  .desc {
+    padding-right: 12rem;
+    font-size: clamp(0.7rem, 15vw, 1rem);
+  }
+  .contact {
+    width: 66%;
+  }
+}
+
+.slide-top {
+  -webkit-animation: slide-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.slide-left {
+  -webkit-animation: slide-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-left 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-8-24 10:58:44
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0.4;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 4;
+  }
+}
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateY(-150px);
+    transform: translateY(-150px);
+    opacity: 0.4;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 4;
+  }
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-8-24 11:4:31
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(-150px);
+    transform: translateX(-150px);
+    opacity: 0.4;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(-150px);
+    transform: translateX(-150px);
+    opacity: 0.4;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
